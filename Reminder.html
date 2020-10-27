@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Title</title>
+<style>
+    body,html {
+        background-image: url('Death_Star.png');
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+    }
+    </style>
+</head>
+<body>
+<h1>
+<p style="color: aliceblue;" style="text-align:center" >Today 
+    <span id="datetime"></span></p>
+
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear());
+</script>
+<script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+    </script>
+    <body style ="text-align:center" onload="startTime()">
+        <div style="color: aliceblue;" id="txt"></div>
+        
+</h1>
+
+
+<h2>
+    <img style="text-align: center;" src="6288144.jpg" width="1000" height="450">
+</h2>
+
+</body>
+</html>
